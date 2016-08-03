@@ -161,7 +161,7 @@ if(isset($_POST['update']))
 	</style>
 </head>         
 <body>
-	<form action="timeline-books.php" method="POST">
+	<form action="home.php" method="POST">
 		<div id="container" class="container" >
 			<header>
 				<nav class="fixed-nav-bar" >
