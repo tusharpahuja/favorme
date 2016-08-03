@@ -1,0 +1,55 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+body{
+	font-family: 'Raleway', sans-serif;
+}
+.icon-close{
+	float: right;
+	margin: 0.2em;
+}
+.content-style-sidebar h2{
+	margin-left: 1em;
+}
+ul li{
+	list-style-type: none;
+	margin: 1em;
+	font-weight: 400;
+	color: black;
+}
+.sidebar-li{
+	border
+}
+.container h1{
+	text-align: center;
+	color: black;
+}
+.usr-menu{
+	float: right;
+	display: inline;
+}
+li{
+	display: inline;
+}
+#header-line{
+	color: #c2c3a3;
+}
+.btn{
+	border: none;
+}
+.btn-profile{
+	background-color: transparent;
+	font-size: 1.2em;
+	border-radius: 0.2em;
+	padding: 0.1em;
+}
+@media screen and (max-width: 470px){
+	header h1{
+		font-size: 1.7em;
+}	
+}
+.main{
+	width: 95%;
+	max-width: 69em;
+	margin: 0 auto;
+	padding: 0 1.875em 3.125em;
+}

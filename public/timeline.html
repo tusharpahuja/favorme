@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js favorsection">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Profile</title>
+		<meta name="theme-color" content="#46a4da">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/settings.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/content.css" />
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/profile.css">
+		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<script src="js/modernizr.custom.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/timeline.css" />
+		<link rel="stylesheet" type="text/css" href="css/one.css" />
+		<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
+		<link rel="stylesheet" type="text/css" href="css1/style.css" />
+	</head>
+	<body>
+		<div id="container" class="container">
+		<header>
+			<div class="usr-menu">
+			<ul>
+				<li><a href="profile.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+				<li><a href="profile.php"><i class="fa fa-user"></i> My profile</a></li>
+				<li><a href="logout.php"></span>Logout</a></li>
+			</ul>
+			</div>
+			<h1>Favor Feed</h1>
+		</header>
+		<hr id="header-line">
+		<div class="main">
+				<ul class="cbp_tmtimeline">
+					<li>
+						<time class="cbp_tmtime" datetime="2013-04-10 18:30"><span>4/10/13</span> <span>18:30</span></time>				<div class="cbp_tmicon cbp_tmicon-phone"></div>
+						<div class="cbp_tmlabel">
+							<h2>Title of the post<span id="by">posted by <em>Kumar Shubham</em></span></h2>
+							<p>Winter purslane courgette pumpkin quandong komatsuna fennel green bean cucumber watercress. Pea sprouts wattle seed rutabaga okra yarrow cress avocado grape radish bush tomato ricebean black-eyed pea maize eggplant. Cabbage lentil cucumber chickpea sorrel gram garbanzo plantain lotus root bok choy squash cress potato summer purslane salsify fennel horseradish dulse. Winter purslane garbanzo artichoke broccoli lentil corn okra silver beet celery quandong. Plantain salad beetroot bunya nuts black-eyed pea collard greens radish water spinach gourd chicory prairie turnip avocado sierra leone bologi.</p>
+							<div class="baseline">
+								<a href="comments.php"><button type="submit" class="btn btn-danger">Comments</button></a>
+							</div>
+						</div>
+					</li>			
+				</ul>
+			</div>
+		</div>
+		<!-- /container -->
+		<div class="morph-button morph-button-sidebar morph-button-fixed" style="z-index: 999;">
+			<button type="button"><i class="fa fa-tags"></i></span></button>
+			<div class="morph-content">
+				<div>
+					<div class="content-style-sidebar">
+						<span class="icon icon-close" id="close"><i class="fa fa-close"></i></span>
+						<br>
+						<h2 id="categories" class="noshow">Categories<i class="fa fa-arrow-circle-down"></i></h2>
+						<div id="cat" style="display: none;">
+							<ul>
+								<div class="sidebar-li">
+									<a href="timeline-academics.php"><li>Academics</li></a>
+								</div>
+								<div class="sidebar-li">
+									<a href="timeline-books.php"><li>Books</li></a>
+								</div>
+								<div class="sidebar-li">
+									<a href="timeline-cosmetics.php"><li>Personal care</li></a>
+								</div>	
+								<div class="sidebar-li">
+									<a href="timeline-electronics.php"><li>Electronics</li></a>
+								</div>							
+								<div class="sidebar-li">
+									<a href="timeline-foods.php"><li>Food</li></a>
+								</div>
+								<div class="sidebar-li">
+									<a href="timeline-footwear.php"><li>Clothing & Footwear</li></a>
+								</div>
+								<div class="sidebar-li">
+									<a href="timeline-games.php"><li>Games</li></a>
+								</div>
+								<div class="sidebar-li">
+									<a href="timeline-movies.php"><li>Movies</li></a>
+								</div>
+								<div class="sidebar-li">
+									<a href="timeline-sports.php"><li>Sports</li></a>
+								</div>
+								<div class="sidebar-li">
+									<a href="timeline-otheraccessories.php"><li>Other Accessories</li></a>
+								</div>
+							</ul>
+						</div>
+						<h2 id="categories" class="noshow"><a href="settings.php" style="text-decoration: none;color: black;">Settings</a></h2>
+					</div>
+				</div>
+			</div>
+		</div>		<script src="js/classie.js"></script>
+		<script src="js/uiMorphingButton_fixed.js"></script>
+		<script>
+			(function() {
+				var docElem = window.document.documentElement, didScroll, scrollPosition,
+					container = document.getElementById( 'container' );
+
+				// trick to prevent scrolling when opening/closing button
+				function noScrollFn() {
+					window.scrollTo( scrollPosition ? scrollPosition.x : 0, scrollPosition ? scrollPosition.y : 0 );
+				}
+
+				function noScroll() {
+					window.removeEventListener( 'scroll', scrollHandler );
+					window.addEventListener( 'scroll', noScrollFn );
+				}
+
+				function scrollFn() {
+					window.addEventListener( 'scroll', scrollHandler );
+				}
+
+				function canScroll() {
+					window.removeEventListener( 'scroll', noScrollFn );
+					scrollFn();
+				}
+
+				function scrollHandler() {
+					if( !didScroll ) {
+						didScroll = true;
+						setTimeout( function() { scrollPage(); }, 60 );
+					}
+				};
+
+				function scrollPage() {
+					scrollPosition = { x : window.pageXOffset || docElem.scrollLeft, y : window.pageYOffset || docElem.scrollTop };
+					didScroll = false;
+				};
+
+				scrollFn();
+				
+				var el = document.querySelector( '.morph-button' );
+				
+				new UIMorphingButton( el, {
+					closeEl : '.icon-close',
+					onBeforeOpen : function() {
+						// don't allow to scroll
+						noScroll();
+						// push main container
+						classie.addClass( container, 'pushed' );
+					},
+					onAfterOpen : function() {
+						// can scroll again
+						canScroll();
+						// add scroll class to main el
+						classie.addClass( el, 'scroll' );
+					},
+					onBeforeClose : function() {
+						// remove scroll class from main el
+						classie.removeClass( el, 'scroll' );
+						// don't allow to scroll
+						noScroll();
+						// push back main container
+						classie.removeClass( container, 'pushed' );
+					},
+					onAfterClose : function() {
+						// can scroll again
+						canScroll();
+					}
+				} );
+			})();
+		</script>
+		<script type="text/javascript">
+			$("#categories").click(function(){
+				$("#cat").slideDown();
+				$("#categories").removeClass('noshow');
+			});
+			$("#close").click(function(){
+				$("#cat").slideUp();
+				$("#categories").addClass('noshow');
+			});
+		</script>
+		
+		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	</body>
+</html>

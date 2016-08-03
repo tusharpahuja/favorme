@@ -1,0 +1,13 @@
+.jumbotron{
+	padding-top: 0;
+	margin-top: 0;
+}
+.jumbotron h1{
+	text-align: center;
+}
+.container-fluid{
+	text-align: center;
+}
+.navbar-header a{
+	text-align: center;
+}
