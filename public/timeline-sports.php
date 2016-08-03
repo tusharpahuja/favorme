@@ -28,7 +28,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO electronics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-sports.php");
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -38,7 +38,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO movies(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-sports.php");
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -48,7 +48,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO games(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-sports.php");
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -58,7 +58,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO books(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-sports.php");
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -68,7 +68,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO sports(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-sports.php");
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -78,7 +78,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO cosmetics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-sports.php");
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -88,7 +88,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO footwear(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-sports.php");
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -98,7 +98,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO food(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-sports.php");
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -108,7 +108,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO academics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-sports.php");
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -118,7 +118,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO otheraccessories(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-sports.php");
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -141,35 +141,52 @@ if(isset($_POST['update']))
 	<link rel="stylesheet" type="text/css" href="css/profile.css">
 	<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<script src="js/modernizr.custom.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/timeline.css" />
-	<link rel="shortcut icon" href="../favicon.ico"> 
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/one.css" />
 	<link rel="stylesheet" type="text/css" href="css/new.css" />
 	<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
 	<link rel="stylesheet" type="text/css" href="css1/style.css" />
+	<style type="text/css">
+		.fixed-nav-bar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 9999;
+			width: 100%;
+			height: 55px;
+			background-color: #e85657;
+		}
+	</style>
 </head>
 <body>
 	<form action="timeline-sports.php" method="POST">
 		<div id="container" class="container">
 			<header>
-				<div align="right">
-					<ul>
-						<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-						<li><a href="profile.php"><i class="fa fa-user"></i> My profile</a></li>
-						<li>
-						<div class="dropdown">
-							<button class="dropbtn"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;Settings</button>
-							<div class="dropdown-content">
-								<a href="profile_settings.php">Profile Settings</a>
-								<a href="account_settings.php">Account Settings</a>
-								<a href="logout.php">Logout</a>
-							</div>
-						</div>
+				<nav class="fixed-nav-bar" >
+					<div align="right" style="margin-top: 0px;">
+						<ul>
+							<li><a href="home.php" class="a1" style="color: white;"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+							<li><a href="profile.php" class="b1" style="color: white;"><i class="fa fa-user"></i> My profile</a></li>
+							<li>
+								<div class="dropdown" style="margin-right: 60px; margin-left: -20px;">
+									<button class="dropbtn"><i class="fa fa-cog" aria-hidden="true" ></i>&nbsp;Settings</button>
+									<div class="dropdown-content">
+										<a href="profile_settings.php">Profile Settings</a>
+										<a href="account_settings.php">Account Settings</a>
+										<a href="logout.php">Logout</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<ul style="font-size: 30px;float: left;margin-top: -50px;">
+						<li style="color: white;">
+							favor.me
 						</li>
 					</ul>
-				</div>
-				<h1 style="font-size: 50px;">SPORTS</h1>
+				</nav>
 			</header>
 			<hr id="header-line">
 			<div class="main">
@@ -385,7 +402,7 @@ if(isset($_POST['comment']))
 		echo "commented";
 		?>
 		<script type="text/javascript">
-			window.open ('timeline-sports.php','_self',false);
+			window.open ('timeline-academics.php','_self',false);
 		</script>
 		<?php
 	}
@@ -393,7 +410,7 @@ if(isset($_POST['comment']))
 		echo "Comment failed";
 	?>
 	<script type="text/javascript">
-		window.open ('timeline-sports.php','_self',false);
+		window.open ('timeline-academics.php','_self',false);
 	</script>
 	<?php
 }

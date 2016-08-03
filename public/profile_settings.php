@@ -127,13 +127,13 @@ if(isset($_POST['pupload']))
 	<link rel="stylesheet" type="text/css" href="css1/style.css" />
 	<style type="text/css">
 		.fixed-nav-bar {
-		  position: fixed;
-		  top: 0;
-		  left: 0;
-		  z-index: 9999;
-		  width: 100%;
-		  height: 55px;
-		  background-color: #e85657;
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 9999;
+			width: 100%;
+			height: 55px;
+			background-color: #e85657;
 		}
 	</style>
 </head>
@@ -141,22 +141,29 @@ if(isset($_POST['pupload']))
 	<div>
 		<div id="container" class="container" style="margin-top: -100px;">
 			<header>
-				<div align="right">
-					<ul>
-						<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-						<li><a href="profile.php"><i class="fa fa-user"></i> My profile</a></li>
-						<li>
-						<div class="dropdown">
-							<button class="dropbtn"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;Settings</button>
-							<div class="dropdown-content">
-								<a href="profile_settings.php">Profile Settings</a>
-								<a href="account_settings.php">Account Settings</a>
-								<a href="logout.php">Logout</a>
-							</div>
-						</div>
+				<nav class="fixed-nav-bar" >
+					<div align="right" style="margin-top: 0px;">
+						<ul>
+							<li><a href="home.php" class="a1" style="color: white;"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+							<li><a href="profile.php" class="b1" style="color: white;"><i class="fa fa-user"></i> My profile</a></li>
+							<li>
+								<div class="dropdown" style="margin-right: 60px; margin-left: -20px;">
+									<button class="dropbtn"><i class="fa fa-cog" aria-hidden="true" ></i>&nbsp;Settings</button>
+									<div class="dropdown-content">
+										<a href="profile_settings.php">Profile Settings</a>
+										<a href="account_settings.php">Account Settings</a>
+										<a href="logout.php">Logout</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<ul style="font-size: 30px;float: left;margin-top: -50px;">
+						<li style="color: white;">
+							favor.me
 						</li>
 					</ul>
-				</div>
+				</nav>
 			</header>
 		</div>
 		<div id="container_demo" style="margin-top:90px; ">
@@ -201,3 +208,5 @@ if(isset($_POST['pupload']))
 		</div>
 	</body>
 	</html>
+
+
