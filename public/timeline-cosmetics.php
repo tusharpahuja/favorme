@@ -151,7 +151,7 @@ if(isset($_POST['update']))
 </head>
 <body>
 	<form action="timeline-cosmetics.php" method="POST">
-		<div id="container" class="container">
+		<div id="container" class="container" >
 			<header>
 				<div align="right">
 					<ul>

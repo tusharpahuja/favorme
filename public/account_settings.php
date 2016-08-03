@@ -32,6 +32,7 @@
 	<link rel="shortcut icon" href="../favicon.ico"> 
 	<link rel="stylesheet" type="text/css" href="css/style.css" />
 	<link rel="stylesheet" type="text/css" href="css/one.css" />
+	<link rel="stylesheet" type="text/css" href="css/new.css" />
 	<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
 	<link rel="stylesheet" type="text/css" href="css1/style.css" />
 	<style type="text/css">
@@ -48,19 +49,28 @@
 </head>
 <body>
 	<div>
-		<div id="container" class="container">
+		<div id="container" class="container" style="margin-top: -100px;">
 			<header>
 				<div align="right">
 					<ul>
 						<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
 						<li><a href="profile.php"><i class="fa fa-user"></i> My profile</a></li>
-						<li><a href="logout.php"></span>Logout</a></li>
+						<li>
+						<div class="dropdown">
+							<button class="dropbtn"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;Settings</button>
+							<div class="dropdown-content">
+								<a href="profile_settings.php">Profile Settings</a>
+								<a href="account_settings.php">Account Settings</a>
+								<a href="logout.php">Logout</a>
+							</div>
+						</div>
+						</li>
 					</ul>
 				</div>
 			</header>
 			<hr id="header-line">
 		</div>
-		<div id="container_demo">
+		<div id="container_demo" style="margin-top:90px;">
 			<div id="wrapper">
 				<div id="login" class="animate form">
 					<form  action="profile_settings.php" method='POST' enctype="multipart/form-data"> 
