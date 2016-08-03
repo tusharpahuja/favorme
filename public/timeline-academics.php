@@ -145,6 +145,7 @@ if(isset($_POST['update']))
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/timeline.css" />
 	<link rel="stylesheet" type="text/css" href="css/one.css" />
+	<link rel="stylesheet" type="text/css" href="css/new.css" />
 	<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
 	<link rel="stylesheet" type="text/css" href="css1/style.css" />
 </head>
@@ -156,7 +157,16 @@ if(isset($_POST['update']))
 					<ul>
 						<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
 						<li><a href="profile.php"><i class="fa fa-user"></i> My profile</a></li>
-						<li><a href="logout.php"></span>Logout</a></li>
+						<li>
+						<div class="dropdown">
+							<button class="dropbtn"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;Settings</button>
+							<div class="dropdown-content">
+								<a href="profile_settings.php">Profile Settings</a>
+								<a href="account_settings.php">Account Settings</a>
+								<a href="logout.php">Logout</a>
+							</div>
+						</div>
+						</li>
 					</ul>
 				</div>
 				<h1 style="font-size: 50px;">ACADEMICS</h1>
@@ -269,7 +279,6 @@ if(isset($_POST['update']))
 								</div>
 							</ul>
 						</div>
-						<h2 id="categories" class="noshow"><a href="settings.php" style="text-decoration: none;color: black;">Settings</a></h2>
 					</div>
 				</div>
 			</div>

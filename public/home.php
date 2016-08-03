@@ -154,7 +154,7 @@ if(isset($_POST['update']))
 		  left: 0;
 		  z-index: 9999;
 		  width: 100%;
-		  height: 60px;
+		  height: 80px;
 		  background-color: #00a087;
 		}
 	</style>
