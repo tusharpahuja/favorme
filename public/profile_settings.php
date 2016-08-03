@@ -165,7 +165,6 @@ if(isset($_POST['pupload']))
 					</ul>
 				</nav>
 			</header>
-			<hr id="header-line">
 		</div>
 		<div id="container_demo" style="margin-top:90px; ">
 			<div id="wrapper">
