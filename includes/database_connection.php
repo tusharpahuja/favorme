@@ -1,7 +1,7 @@
 <?php
         $DB_SERVER="localhost";
         $DB_USER="root";
-        $DB_PASS="techno2480";
+        $DB_PASS="";
         $DB_NAME="favour.me";
 
     //Create a database connection

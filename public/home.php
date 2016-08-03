@@ -147,19 +147,32 @@ if(isset($_POST['update']))
 	<link rel="stylesheet" type="text/css" href="css/one.css" />
 	<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
 	<link rel="stylesheet" type="text/css" href="css1/style.css" />
+	<style type="text/css">
+		.fixed-nav-bar {
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  z-index: 9999;
+		  width: 100%;
+		  height: 60px;
+		  background-color: #00a087;
+		}
+	</style>
 </head>         
 <body>
 	<form action="timeline-books.php" method="POST">
 		<div id="container" class="container">
 			<header>
-				<div align="right">
-					<ul>
-						<li><a href="home.php" class="a1"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-						<li><a href="profile.php" class="b1"><i class="fa fa-user"></i> My profile</a></li>
-						<li><a href="logout.php" class="c1"></span>Logout</a></li>
-					</ul>
-				</div>
-				<h1 style="font-size: 50px;">FAVOR.ME</h1>
+				<nav class="fixed-nav-bar">
+					<div align="right">
+						<ul>
+							<li><a href="home.php" class="a1"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+							<li><a href="profile.php" class="b1"><i class="fa fa-user"></i> My profile</a></li>
+							<li><a href="logout.php" class="c1"></span>Logout</a></li>
+						</ul>
+					</div>
+					<h1 style="font-size: 50px;">FAVOR.ME</h1>
+				</nav>
 			</header>
 			<hr id="header-line">
 			<div class="main">
