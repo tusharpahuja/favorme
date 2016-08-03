@@ -125,6 +125,17 @@ if(isset($_POST['pupload']))
 	<link rel="stylesheet" type="text/css" href="css/new.css" />
 	<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
 	<link rel="stylesheet" type="text/css" href="css1/style.css" />
+	<style type="text/css">
+		.fixed-nav-bar {
+		  position: fixed;
+		  top: 0;
+		  left: 0;
+		  z-index: 9999;
+		  width: 100%;
+		  height: 55px;
+		  background-color: #e85657;
+		}
+	</style>
 </head>
 <body>
 	<div>

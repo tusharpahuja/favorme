@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'BebasNeueRegular';
+    font-family: 'Times New Roman';
     src: url('fonts/BebasNeue-webfont.eot');
     src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/BebasNeue-webfont.woff') format('woff'),
@@ -86,14 +86,26 @@ a{
     text-align: center;
 }
 .container > header h1{
-	font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+	font-family: 'Times New Roman','Arial Narrow', Arial, sans-serif;
 	font-size: 35px;
+	text-transform: lowercase;
 	line-height: 35px;
 	position: relative;
 	font-weight: 400;
 	color: rgba(26,89,120,0.9);
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
     padding: 0px 0px 5px 0px;
+}
+.abcd {
+	font-family: 'Times New Roman','Arial Narrow', Arial, sans-serif;
+	font-size: 35px;
+	text-transform: lowercase;
+	line-height: 35px;
+	position: relative;
+	font-weight: 400;
+	color: rgba(26,89,120,0.9);
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+    	padding: 0px 0px 5px 0px;
 }
 .container > header h1 span{
 	color: #7cbcd6;
