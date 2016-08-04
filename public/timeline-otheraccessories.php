@@ -23,97 +23,7 @@ if(isset($_POST['update']))
 	$date=date("Y-m-d");
 	if(!empty($category) && !empty($ask_favor))
 	{
-		if($category=="electronics")
-		{	
-			$query="INSERT INTO electronics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-otheraccessories.php");
-			else
-				echo "Favor Updation failed!";
-		}
-
-		elseif($category=="movies")
-		{	
-			$query="INSERT INTO movies(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-otheraccessories.php");
-			else
-				echo "Favor Updation failed!";
-		}
-
-		elseif($category=="games")
-		{	
-			$query="INSERT INTO games(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-otheraccessories.php");
-			else
-				echo "Favor Updation failed!";
-		}
-
-		elseif($category=="books")
-		{	
-			$query="INSERT INTO books(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-otheraccessories.php");
-			else
-				echo "Favor Updation failed!";
-		}
-
-		elseif($category=="sports")
-		{	
-			$query="INSERT INTO sports(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-otheraccessories.php");
-			else
-				echo "Favor Updation failed!";
-		}
-
-		elseif($category=="cosmetics")
-		{	
-			$query="INSERT INTO cosmetics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-otheraccessories.php");
-			else
-				echo "Favor Updation failed!";
-		}
-
-		elseif($category=="footwear")
-		{	
-			$query="INSERT INTO footwear(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-otheraccessories.php");
-			else
-				echo "Favor Updation failed!";
-		}
-		
-		elseif($category=="food")
-		{	
-			$query="INSERT INTO food(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-otheraccessories.php");
-			else
-				echo "Favor Updation failed!";
-		}
-		
-		elseif($category=="academics")
-		{	
-			$query="INSERT INTO academics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-otheraccessories.php");
-			else
-				echo "Favor Updation failed!";
-		}
-		
-		elseif($category=="otheraccessories")
+		if($category=="otheraccessories")
 		{	
 			$query="INSERT INTO otheraccessories(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
@@ -123,8 +33,6 @@ if(isset($_POST['update']))
 				echo "Favor Updation failed!";
 		}
 	}
-
-
 }
 ?>
 <!DOCTYPE html>
