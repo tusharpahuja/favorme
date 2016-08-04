@@ -139,14 +139,20 @@ if(isset($_POST['update']))
 													$commenting_username=find_username_by_id($commenting_user_id,$connection);
 													$comment=$row_comments['comment'];
 													echo "$comment";
+													echo "&nbsp;&nbsp;&nbsp;&nbsp;";
 
-													echo "commented by";
-													echo "$commenting_username";
+													echo "commented by &nbsp;";
+													echo "<a href=\"show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>\"";
+													echo ">";
+													echo "<i>";
+													echo $username;
+													echo "</i>";
+													echo "</a>";
 													echo "<br>";
 												}
 											}
 											?>
-											<input type="text" name="<?php echo $favor_id?>" id="<?php echo $favor_id;?>">
+											<input type="text" name="<?php echo $favor_id?>" id="<?php echo $favor_id;?>" style="color: black;">
 											<input type="submit" name="comment" id="<?php echo $favor_id;?>" value="Comment" class="btn btn-danger" onClick="createField(<?php echo $favor_id?>);return true;">
 											<div id="hide"></div>
 											<br>
