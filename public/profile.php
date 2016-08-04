@@ -1,140 +1,140 @@
 <?php
-	include("../includes/database_connection.php");
-	include("../includes/functions.php");
-	include("../includes/session.php");
-	if(logged_in())
-	{
-		$current_username= $_SESSION['current_username'];
-		$current_name=$_SESSION['current_name'];
-		$current_user_id=$_SESSION['current_user_id'];
-	}
-	else
-		redirect_to("login.php");
-	?>
+include("../includes/database_connection.php");
+include("../includes/functions.php");
+include("../includes/session.php");
+if(logged_in())
+{
+	$current_username= $_SESSION['current_username'];
+	$current_name=$_SESSION['current_name'];
+	$current_user_id=$_SESSION['current_user_id'];
+}
+else
+	redirect_to("login.php");
+?>
 <?php 
-	$pull="SELECT * FROM user_details WHERE user_id = $current_user_id";
-	$result=mysqli_query($connection,$pull);
-	$pics=mysqli_fetch_assoc($result);
-	echo '<div class="imgLow">';
-	echo "<img src='upload/$pics[url]' alt='profile picture' width='80' height='64'   class='doubleborder'/></div>";
+$pull="SELECT * FROM user_details WHERE user_id = $current_user_id";
+$result=mysqli_query($connection,$pull);
+$pics=mysqli_fetch_assoc($result);
+echo '<div class="imgLow">';
+echo "<img src='upload/$pics[url]' alt='profile picture' width='80' height='64'   class='doubleborder'/></div>";
 ?>
 
 <?php
-	if(isset($_POST['update']))
+if(isset($_POST['update']))
+{
+	$ask_favor=mysql_entities_fix_string($_POST['askfavor']);
+	$category=mysql_entities_fix_string($_POST['categories']);
+	echo "$ask_favor";
+	echo "$category";
+	$time=date("h:i:sa");
+	$date=date("Y-m-d");
+	echo "$time";
+	echo "$date";
+	if(!empty($category) && !empty($ask_favor))
 	{
-		$ask_favor=mysql_entities_fix_string($_POST['askfavor']);
-		$category=mysql_entities_fix_string($_POST['categories']);
-		echo "$ask_favor";
-		echo "$category";
-		$time=date("h:i:sa");
-		$date=date("Y-m-d");
-		echo "$time";
-		echo "$date";
-		if(!empty($category) && !empty($ask_favor))
-		{
-			if($category=="electronics")
-			{	
-				$query="INSERT INTO electronics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-				$result=mysqli_query($connection,$query);
-				if($result)
-					echo "Updated";
-				else
-					echo "Updation Failed";
-			}
-
-			elseif($category=="movies")
-			{	
-				$query="INSERT INTO movies(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-				$result=mysqli_query($connection,$query);
-				if($result)
-					echo "Updated";
-				else
-					echo "Updation Failed";
-			}
-
-			elseif($category=="games")
-			{	
-				$query="INSERT INTO games(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-				$result=mysqli_query($connection,$query);
-				if($result)
-					echo "Updated";
-				else
-					echo "Updation Failed";
-			}
-
-			elseif($category=="books")
-			{	
-				$query="INSERT INTO books(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-				$result=mysqli_query($connection,$query);
-				if($result)
-					echo "Updated";
-				else
-					echo "Updation Failed";
-			}
-
-			elseif($category=="sports")
-			{	
-				$query="INSERT INTO sports(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-				$result=mysqli_query($connection,$query);
-				if($result)
-					echo "Updated";
-				else
-					echo "Updation Failed";
-			}
-
-			elseif($category=="cosmetics")
-			{	
-				$query="INSERT INTO cosmetics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-				$result=mysqli_query($connection,$query);
-				if($result)
-					echo "Updated";
-				else
-					echo "Updation Failed";
-			}
-
-			elseif($category=="footwear")
-			{	
-				$query="INSERT INTO footwear(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-				$result=mysqli_query($connection,$query);
-				if($result)
-					echo "Updated";
-				else
-					echo "Updation Failed";
-			}
-			
-			elseif($category=="food")
-			{	
-				$query="INSERT INTO food(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-				$result=mysqli_query($connection,$query);
-				if($result)
-					echo "Updated";
-				else
-					echo "Updation Failed";
-			}
-			
-			elseif($category=="academics")
-			{	
-				$query="INSERT INTO academics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-				$result=mysqli_query($connection,$query);
-				if($result)
-					echo "Updated";
-				else
-					echo "Updation Failed";
-			}
-			
-			elseif($category=="otheraccessories")
-			{	
-				$query="INSERT INTO otheraccessories(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-				$result=mysqli_query($connection,$query);
-				if($result)
-					echo "Updated";
-				else
-					echo "Updation Failed";
-			}
+		if($category=="electronics")
+		{	
+			$query="INSERT INTO electronics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				echo "Updated";
+			else
+				echo "Updation Failed";
 		}
 
+		elseif($category=="movies")
+		{	
+			$query="INSERT INTO movies(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				echo "Updated";
+			else
+				echo "Updation Failed";
+		}
 
+		elseif($category=="games")
+		{	
+			$query="INSERT INTO games(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				echo "Updated";
+			else
+				echo "Updation Failed";
+		}
+
+		elseif($category=="books")
+		{	
+			$query="INSERT INTO books(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				echo "Updated";
+			else
+				echo "Updation Failed";
+		}
+
+		elseif($category=="sports")
+		{	
+			$query="INSERT INTO sports(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				echo "Updated";
+			else
+				echo "Updation Failed";
+		}
+
+		elseif($category=="cosmetics")
+		{	
+			$query="INSERT INTO cosmetics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				echo "Updated";
+			else
+				echo "Updation Failed";
+		}
+
+		elseif($category=="footwear")
+		{	
+			$query="INSERT INTO footwear(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				echo "Updated";
+			else
+				echo "Updation Failed";
+		}
+
+		elseif($category=="food")
+		{	
+			$query="INSERT INTO food(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				echo "Updated";
+			else
+				echo "Updation Failed";
+		}
+
+		elseif($category=="academics")
+		{	
+			$query="INSERT INTO academics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				echo "Updated";
+			else
+				echo "Updation Failed";
+		}
+
+		elseif($category=="otheraccessories")
+		{	
+			$query="INSERT INTO otheraccessories(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				echo "Updated";
+			else
+				echo "Updation Failed";
+		}
 	}
+
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -172,6 +172,10 @@
 </head>
 <body>
 	<form action="timeline-academics.php" method="POST">
+		<?php 
+			echo "$current_username   ";
+			echo "$current_name";
+		?>
 		<div id="container" class="container">
 			<header>
 				<nav class="fixed-nav-bar" >
@@ -196,7 +200,7 @@
 							favor.me
 						</li>
 					</ul>
-					<h1 style="font-size: 50px;margin-top: -40px;">MY PROFILE</h1>
+					<!--<h1 style="font-size: 50px;margin-top: -40px;">MY PROFILE</h1>-->
 				</nav>
 			</header>
 			<hr id="header-line">
@@ -343,54 +347,20 @@
 </body>
 </html>
 
-
-<!--<!doctype html>
-	<html>
-		<head>
-			<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
-			<link rel="stylesheet" type="text/css" href="css1/style.css" />
-		</head>
-		<body>
-			<form action="profile.php" method="POST">
-				<?php 
-					echo "$current_username   ";
-					echo "$current_name";
-				?>
-				's Profile
-				<br>
-				<br>
-				<input type="text" height="200" width="500" placeholder="Ask a favor" name="askfavor">&nbsp&nbsp&nbsp&nbsp
-				<select type="text" name="categories">
-					<option value="electronics">Electronics</option>
-					<option value="books">Books</option>
-					<option value="movies">Movies & TV Shows</option>
-					<option value="games">Games</option>
-					<option value="sports">Sports</option>
-					<option value="cosmetics">Beauty & Personal Care</option>
-					<option value="footwear">Footwear</option>
-					<option value="food">Food & Snacks</option>
-					<option value="academics">Academics</option>
-					<option value="otheraccessories">Other Accessories</option>
-				</select>
-				<input type="submit" name="update" value="Ask">
-			</form>
-		</body>
-	</html>
--->
 <?php
-	
-	$query="SELECT * FROM electronics WHERE user_id=$current_user_id";
-	$result=mysqli_query($connection,$query);
-	if($result)
+
+$query="SELECT * FROM electronics WHERE user_id=$current_user_id";
+$result=mysqli_query($connection,$query);
+if($result)
+{
+	while($row=mysqli_fetch_assoc($result))
 	{
-		while($row=mysqli_fetch_assoc($result))
-		{
-			$user_id=$row['user_id'];
-			$favor=$row['favor'];
-			echo "$favor";
-			echo "&nbsp&nbsp&nbsp&nbsp posted by &nbsp&nbsp&nbsp&nbsp";
-			echo "$current_username";
-			echo "<br>";
-		}
+		$user_id=$row['user_id'];
+		$favor=$row['favor'];
+		echo "$favor";
+		echo "&nbsp&nbsp&nbsp&nbsp posted by &nbsp&nbsp&nbsp&nbsp";
+		echo "$current_username";
+		echo "<br>";
 	}
+}
 ?>
