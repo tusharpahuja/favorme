@@ -23,37 +23,7 @@ if(isset($_POST['update']))
 	$date=date("Y-m-d");
 	if(!empty($category) && !empty($ask_favor))
 	{
-		if($category=="electronics")
-		{	
-			$query="INSERT INTO electronics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-books.php");
-			else
-				echo "Favor Updation failed!";
-		}
-
-		elseif($category=="movies")
-		{	
-			$query="INSERT INTO movies(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-books.php");
-			else
-				echo "Favor Updation failed!";
-		}
-
-		elseif($category=="games")
-		{	
-			$query="INSERT INTO games(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-books.php");
-			else
-				echo "Favor Updation failed!";
-		}
-
-		elseif($category=="books")
+		if($category=="books")
 		{	
 			$query="INSERT INTO books(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
@@ -62,69 +32,7 @@ if(isset($_POST['update']))
 			else
 				echo "Favor Updation failed!";
 		}
-
-		elseif($category=="sports")
-		{	
-			$query="INSERT INTO sports(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-books.php");
-			else
-				echo "Favor Updation failed!";
-		}
-
-		elseif($category=="cosmetics")
-		{	
-			$query="INSERT INTO cosmetics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-books.php");
-			else
-				echo "Favor Updation failed!";
-		}
-
-		elseif($category=="footwear")
-		{	
-			$query="INSERT INTO footwear(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-books.php");
-			else
-				echo "Favor Updation failed!";
-		}
-		
-		elseif($category=="food")
-		{	
-			$query="INSERT INTO food(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-books.php");
-			else
-				echo "Favor Updation failed!";
-		}
-		
-		elseif($category=="academics")
-		{	
-			$query="INSERT INTO academics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-books.php");
-			else
-				echo "Favor Updation failed!";
-		}
-		
-		elseif($category=="otheraccessories")
-		{	
-			$query="INSERT INTO otheraccessories(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-books.php");
-			else
-				echo "Favor Updation failed!";
-		}
 	}
-
-
 }
 ?>
 <!DOCTYPE html>
@@ -146,6 +54,7 @@ if(isset($_POST['update']))
 	<link rel="stylesheet" type="text/css" href="css/timeline.css" />
 	<link rel="stylesheet" type="text/css" href="css/one.css" />
 	<link rel="stylesheet" type="text/css" href="css/new.css" />
+	<link rel="stylesheet" type="text/css" href="css/button.css" />
 	<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
 	<link rel="stylesheet" type="text/css" href="css1/style.css" />
 	<style type="text/css">
@@ -185,17 +94,22 @@ if(isset($_POST['update']))
 						<li style="color: white;">
 							favor.me
 						</li>
+						<li style="margin-top: -20px;">
+							<input type="text" height="200" width="500" placeholder="Ask a favor" name="askfavor" class="button">
+						</li>
+						<li style="margin-left: -30px;">
+							<input type="submit" name="update" value="Ask" class="btn btn-danger">
+						</li>
 					</ul>
 				</nav>
 			</header>
 			<hr id="header-line">
 			<div class="main">
 				<div>
-					<input type="text" height="200" width="500" placeholder="Ask a favor" name="askfavor">&nbsp&nbsp&nbsp&nbsp
-					<select type="text" name="categories">
+					&nbsp&nbsp&nbsp&nbsp
+					<select type="text" name="categories" style="float: right;">
 						<option value="books">Books</option>
 					</select>
-					<input type="submit" name="update" class="btn btn-danger" value="Ask">
 					<br>
 					<br>
 				</div>

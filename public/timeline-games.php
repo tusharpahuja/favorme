@@ -54,6 +54,7 @@ if(isset($_POST['update']))
 	<link rel="stylesheet" type="text/css" href="css/timeline.css" />
 	<link rel="stylesheet" type="text/css" href="css/one.css" />
 	<link rel="stylesheet" type="text/css" href="css/new.css" />
+	<link rel="stylesheet" type="text/css" href="css/button.css" />
 	<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
 	<link rel="stylesheet" type="text/css" href="css1/style.css" />
 	<style type="text/css">
@@ -93,6 +94,12 @@ if(isset($_POST['update']))
 						<li style="color: white;">
 							favor.me
 						</li>
+						<li style="margin-top: -20px;">
+							<input type="text" height="200" width="500" placeholder="Ask a favor" name="askfavor" class="button">
+						</li>
+						<li style="margin-left: -30px;">
+							<input type="submit" name="update" value="Ask" class="btn btn-danger">
+						</li>
 					</ul>
 					<!--<h1 style="font-size: 50px;margin-top: -40px;">GAMES</h1> -->
 				</nav>
@@ -100,11 +107,10 @@ if(isset($_POST['update']))
 			<hr id="header-line">
 			<div class="main">
 				<div>
-					<input type="text" height="200" width="500" placeholder="Ask a favor" name="askfavor">&nbsp&nbsp&nbsp&nbsp
-					<select type="text" name="categories">
+					&nbsp&nbsp&nbsp&nbsp
+					<select type="text" name="categories" style="float: right;">
 						<option value="games">Games</option>
 					</select>
-					<input type="submit" name="update" class="btn btn-danger" value="Ask">
 					<br>
 					<br>
 				</div>
