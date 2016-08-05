@@ -67,6 +67,10 @@ if(isset($_POST['update']))
 			height: 55px;
 			background-color: #e85657;
 		}
+		.doing:hover{
+			background-color: white;
+			color: #d9534f;
+		}
 	</style>
 </head>
 <body>
@@ -98,7 +102,7 @@ if(isset($_POST['update']))
 							<input type="text" height="200" width="500" placeholder="Ask a favor" name="askfavor" class="button">
 						</li>
 						<li style="margin-left: -30px;">
-							<input type="submit" name="update" value="Ask" class="btn btn-danger">
+							<input type="submit" name="update" value="Ask" class="btn btn-danger doing" style="border:2px solid white;">
 						</li>
 					</ul>
 					<!--<h1 style="font-size: 50px;margin-top: -40px;">ELECTRONICS</h1> -->

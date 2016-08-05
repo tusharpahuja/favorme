@@ -159,6 +159,10 @@ if(isset($_POST['update']))
 			height: 55px;
 			background-color: #e85657;
 		}
+		.doing:hover{
+			background-color: white;
+			color: #d9534f;
+		}
 	</style>
 </head>         
 <body>
@@ -190,7 +194,7 @@ if(isset($_POST['update']))
 							<input type="text" height="200" width="500" placeholder="Ask a favor" name="askfavor" class="button">
 						</li>
 						<li style="margin-left: -30px;">
-							<input type="submit" name="update" value="Ask" class="btn btn-danger">
+							<input type="submit" name="update" value="Ask" class="btn btn-danger doing" style="border:2px solid white;">
 						</li>
 					</ul>
 				</nav>
@@ -201,15 +205,15 @@ if(isset($_POST['update']))
 					&nbsp&nbsp&nbsp&nbsp
 					<select type="text" name="categories" style="float: right;">
 						<option value="electronics">Electronics</option>
-						<option value="books">Books</option>
-						<option value="movies">Movies & TV Shows</option>
-						<option value="games">Games</option>
-						<option value="sports">Sports</option>
-						<option value="cosmetics">Beauty & Personal Care</option>
-						<option value="footwear">Clothing & Footwear</option>
-						<option value="food">Food & Snacks</option>
-						<option value="academics">Academics</option>
-						<option value="otheraccessories">Other Accessories</option>
+						<option value="books"><i class="fa fa-book" aria-hidden="true">Books</i></option>
+						<option value="movies"<i class="fa fa-film" aria-hidden="true"></i>Movies & TV Shows</option>
+						<option value="games"><i class="fa fa-gamepad" aria-hidden="true"></i>Games</option>
+						<option value="sports"><i class="fa fa-futbol-o" aria-hidden="true"></i>Sports</option>
+						<option value="cosmetics"><i class="fa fa-user" aria-hidden="true"></i>Beauty & Personal Care</option>
+						<option value="footwear"><i class="fa fa-shirtsinbulk" aria-hidden="true"></i>Clothing & Footwear</option>
+						<option value="food"><i class="fa fa-cutlery" aria-hidden="true"></i>Food & Snacks</option>
+						<option value="academics"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Academics</option>
+						<option value="otheraccessories"><i class="fa fa-question-circle-o" aria-hidden="true"></i>Other Accessories</option>
 					</select>
 					<br>
 					<br>

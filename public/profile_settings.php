@@ -173,34 +173,34 @@ if(isset($_POST['pupload']))
 						<h1>PROFILE SETTINGS</h1> 
 						<p> 
 							<label for="username" class="uname" data-icon="u" > Username </label>
-							<input id="name" name="new_username" type="text" placeholder="myusername"/>
+							<input id="name" name="new_username" type="text" placeholder="myusername" style="height: 10px;"/>
 						</p>
 						<p> 
 							<label for="location" class="Location" data-icon="e" > Location</label>
-							<input id="location" name="location" type="text" placeholder="mylocation"/> 
+							<input id="location" name="location" type="text" placeholder="mylocation" style="height: 10px;"/> 
 						</p>
 						<p> 
 							<label for="Bio" class="Bio" data-icon="e" > Bio</label>
-							<input id="bio" name="bio" type="text" placeholder="mybio"/> 
+							<input id="bio" name="bio" type="text" placeholder="mybio" style="height: 10px;"/> 
 						</p>
 						<p> 
 							<label for="Birthday" class="Birthday" data-icon="e" > Birthday</label>
-							<input id="birthday" name="bday"  type="date" placeholder="mybirthday"/> 
+							<input id="birthday" name="bday"  type="date" placeholder="mybirthday" style="height: 10px;"/> 
 						</p>
-						<p class="sign up button"> 
-							<input type="submit" name="save_changes" value="Save Changes">
+						<p class="sign up button" align="center"> 
+							<input type="submit" name="save_changes" value="Save Changes" style="height: 1em; width: 5em;font-size: 17px;">
 						</p>
 						<?php 
 						$result=mysqli_query($connection,$pull);
 						$pics=mysqli_fetch_assoc($result);
-						echo '<div class="imgLow">';
+						echo '<div class="imgLow" align="center">';
 						echo "<img src='upload/$pics[url]' alt='profile picture' width='80' height='64'   class='doubleborder'/></div>";
 						?>
-						<p>
-							<input type="file" name="file" />
+						<p >
+							<input type="file" name="file"  />
 						</p>
-						<p class="sign up button" > 
-							<input type="submit" name="pupload" class="button" value="Upload"/>
+						<p class="sign up button" align="center"> 
+							<input type="submit" name="pupload" class="button" value="Upload" style="height: 1em; width: 4em;font-size: 17px;"/>
 						</p>
 					</form>
 				</div>

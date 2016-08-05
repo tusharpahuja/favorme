@@ -100,7 +100,7 @@
                                     <label for="location" class="Location"  ><a href="delete_account.php" style="text-decoration: none;"> Delete Account</a></label> 
                                 </p>
                                 <p class="sign up button" > 
-									<a href="settings.php"><input type="button" name="pupload" class="button" value="Back"/><a>
+									<a href="logout.php"><input type="button" name="pupload" class="button" value="Logout"/><a>
                                 </p>
                             </form>
 				</div>
