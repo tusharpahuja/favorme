@@ -167,7 +167,7 @@ if(isset($_POST['update']))
 													}
 												}
 												?>
-												<a href="post.php?favor_id=<?php echo "$favor_id";?>">Comments(<?php echo "$check"; ?>)</a>
+												<a href="post.php?favor_id=<?php echo $favor_id;?>&category=academics">Comments(<?php echo "$check"; ?>)</a>
 												<br>
 											</div>
 										</p>
