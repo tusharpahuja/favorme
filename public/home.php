@@ -131,7 +131,7 @@ if(isset($_POST['update']))
 <html lang="en" class="no-js favorsection">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>Profile</title>
+	<title>Home</title>
 	<meta name="theme-color" content="#46a4da">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/settings.css" />
@@ -145,6 +145,7 @@ if(isset($_POST['update']))
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/timeline.css" />
 	<link rel="stylesheet" type="text/css" href="css/one.css" />
+	<link rel="stylesheet" type="text/css" href="css/button.css" />
 	<link rel="stylesheet" type="text/css" href="css/new.css" />
 	<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
 	<link rel="stylesheet" type="text/css" href="css1/style.css" />
@@ -157,6 +158,10 @@ if(isset($_POST['update']))
 			width: 100%;
 			height: 55px;
 			background-color: #e85657;
+		}
+		.doing:hover{
+			background-color: white;
+			color: #d9534f;
 		}
 	</style>
 </head>         
@@ -185,26 +190,31 @@ if(isset($_POST['update']))
 						<li style="color: white;">
 							favor.me
 						</li>
+						<li style="margin-top: -20px;">
+							<input type="text" height="200" width="500" placeholder="Ask a favor" name="askfavor" class="button">
+						</li>
+						<li style="margin-left: -30px;">
+							<input type="submit" name="update" value="Ask" class="btn btn-danger doing" style="border:2px solid white;">
+						</li>
 					</ul>
 				</nav>
 			</header>
 			<hr id="header-line">
 			<div class="main">
 				<div>
-					<input type="text" height="200" width="500" placeholder="Ask a favor" name="askfavor">&nbsp&nbsp&nbsp&nbsp
-					<select type="text" name="categories">
+					&nbsp&nbsp&nbsp&nbsp
+					<select type="text" name="categories" style="float: right;">
 						<option value="electronics">Electronics</option>
-						<option value="books">Books</option>
-						<option value="movies">Movies & TV Shows</option>
-						<option value="games">Games</option>
-						<option value="sports">Sports</option>
-						<option value="cosmetics">Beauty & Personal Care</option>
-						<option value="footwear">Clothing & Footwear</option>
-						<option value="food">Food & Snacks</option>
-						<option value="academics">Academics</option>
-						<option value="otheraccessories">Other Accessories</option>
+						<option value="books"><i class="fa fa-book" aria-hidden="true">Books</i></option>
+						<option value="movies"<i class="fa fa-film" aria-hidden="true"></i>Movies & TV Shows</option>
+						<option value="games"><i class="fa fa-gamepad" aria-hidden="true"></i>Games</option>
+						<option value="sports"><i class="fa fa-futbol-o" aria-hidden="true"></i>Sports</option>
+						<option value="cosmetics"><i class="fa fa-user" aria-hidden="true"></i>Beauty & Personal Care</option>
+						<option value="footwear"><i class="fa fa-shirtsinbulk" aria-hidden="true"></i>Clothing & Footwear</option>
+						<option value="food"><i class="fa fa-cutlery" aria-hidden="true"></i>Food & Snacks</option>
+						<option value="academics"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Academics</option>
+						<option value="otheraccessories"><i class="fa fa-question-circle-o" aria-hidden="true"></i>Other Accessories</option>
 					</select>
-					<input type="submit" name="update" value="Ask" class="btn btn-danger">
 					<br>
 					<br>
 				</div>
@@ -224,7 +234,7 @@ if(isset($_POST['update']))
 								$date=$row['date'];
 								$time=$row['time'];
 								?>
-								<time class="cbp_tmtime"><span><?php echo "$date";?></span> <span><?php echo "$time";?></span></time>				<div class="cbp_tmicon cbp_tmicon-phone"></div>
+								<time class="cbp_tmtime"><span><?php echo "$date";?></span> <span><?php echo "$time";?></span></time><div class="cbp_tmicon cbp_tmicon-phone"></div>
 								<div class="cbp_tmlabel">
 									<h2 style="font-size: 30px;"><?php echo "$favor";?><span id="by">posted by <em><a href="show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>"><?php echo $username?></a></em></span></h2>
 									<p>
@@ -240,14 +250,20 @@ if(isset($_POST['update']))
 													$commenting_username=find_username_by_id($commenting_user_id,$connection);
 													$comment=$row_comments['comment'];
 													echo "$comment";
+													echo "&nbsp;&nbsp;&nbsp;&nbsp;";
 
-													echo "commented by";
-													echo "$commenting_username";
+													echo "commented by &nbsp;";
+													echo "<a href=\"show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>\"";
+													echo ">";
+													echo "<i>";
+													echo $username;
+													echo "</i>";
+													echo "</a>";
 													echo "<br>";
 												}
 											}
 											?>
-											<input type="text" name="<?php echo $favor_id?>" id="<?php echo $favor_id;?>">
+											<input type="text" name="<?php echo $favor_id?>" id="<?php echo $favor_id;?>" style="color: black;">
 											<input type="submit" name="comment" id="<?php echo $favor_id;?>" value="Comment" class="btn btn-danger" onClick="createField(<?php echo $favor_id?>);return true;">
 											<div id="hide"></div>
 											<br>

@@ -15,6 +15,7 @@ ul li{
 	margin: 1em;
 	font-weight: 400;
 	color: black;
+	padding: 0;
 }
 .sidebar-li{
 	border

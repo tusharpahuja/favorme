@@ -76,15 +76,15 @@ include("../includes/functions.php");
 						<h1>CHANGE PASSWORD</h1> 
 						<p> 
 							<label for="old_password" class="uname" data-icon="p" > Old Password </label>
-							<input id="old_password" name="old_password" required="required" type="password" placeholder="myoldpassword"/>
+							<input id="old_password" name="old_password" required="required" type="password" placeholder="myoldpassword" style="height: 10px;"/>
 						</p>
 						<p> 
 							<label for="new_password" class="uname" data-icon="p" > New Password </label>
-							<input id="new_password" name="new_password" required="required" type="password" placeholder="mynewpassword"/>
+							<input id="new_password" name="new_password" required="required" type="password" placeholder="mynewpassword" style="height: 10px;"/>
 						</p>
 						<p> 
 							<label for="confirm_password" class="uname" data-icon="p" > Confirm Password </label>
-							<input id="confirm_password" name="confirm_password" required="required" type="password" placeholder="mynewpassword"/>
+							<input id="confirm_password" name="confirm_password" required="required" type="password" placeholder="mynewpassword" style="height: 10px;"/>
 						</p>
 						<p class="sign up button"> 
 							<input type="submit" name="save_changes" value="Save Changes">
