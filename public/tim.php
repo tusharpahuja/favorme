@@ -28,11 +28,103 @@ if(isset($_POST['update']))
 			$query="INSERT INTO electronics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-electronics.php");
+				header("location: timeline-academics.php");
+			else
+				echo "Favor Updation failed!";
+		}
+
+		elseif($category=="movies")
+		{	
+			$query="INSERT INTO movies(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				header("location: timeline-academics.php");
+			else
+				echo "Favor Updation failed!";
+		}
+
+		elseif($category=="games")
+		{	
+			$query="INSERT INTO games(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				header("location: timeline-academics.php");
+			else
+				echo "Favor Updation failed!";
+		}
+
+		elseif($category=="books")
+		{	
+			$query="INSERT INTO books(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				header("location: timeline-academics.php");
+			else
+				echo "Favor Updation failed!";
+		}
+
+		elseif($category=="sports")
+		{	
+			$query="INSERT INTO sports(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				header("location: timeline-academics.php");
+			else
+				echo "Favor Updation failed!";
+		}
+
+		elseif($category=="cosmetics")
+		{	
+			$query="INSERT INTO cosmetics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				header("location: timeline-academics.php");
+			else
+				echo "Favor Updation failed!";
+		}
+
+		elseif($category=="footwear")
+		{	
+			$query="INSERT INTO footwear(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				header("location: timeline-academics.php");
+			else
+				echo "Favor Updation failed!";
+		}
+		
+		elseif($category=="food")
+		{	
+			$query="INSERT INTO food(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				header("location: timeline-academics.php");
+			else
+				echo "Favor Updation failed!";
+		}
+		
+		elseif($category=="academics")
+		{	
+			$query="INSERT INTO academics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				header("location: timeline-academics.php");
+			else
+				echo "Favor Updation failed!";
+		}
+		
+		elseif($category=="otheraccessories")
+		{	
+			$query="INSERT INTO otheraccessories(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+			$result=mysqli_query($connection,$query);
+			if($result)
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
 	}
+
+
 }
 ?>
 <!DOCTYPE html>
@@ -56,35 +148,52 @@ if(isset($_POST['update']))
 	<link rel="stylesheet" type="text/css" href="css/new.css" />
 	<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
 	<link rel="stylesheet" type="text/css" href="css1/style.css" />
+	<style type="text/css">
+		.fixed-nav-bar {
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 9999;
+			width: 100%;
+			height: 55px;
+			background-color: #e85657;
+		}
+	</style>
 </head>
 <body>
-	<form action="timeline-electronics.php" method="POST">
+	<form action="timeline-academics.php" method="POST">
 		<div id="container" class="container">
 			<header>
-				<div align="right">
-					<ul>
-						<li><a href="home.php"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-						<li><a href="profile.php"><i class="fa fa-user"></i> My profile</a></li>
-						<li>
-						<div class="dropdown">
-							<button class="dropbtn"><i class="fa fa-cog" aria-hidden="true"></i>&nbsp;Settings</button>
-							<div class="dropdown-content">
-								<a href="profile_settings.php">Profile Settings</a>
-								<a href="account_settings.php">Account Settings</a>
-								<a href="logout.php">Logout</a>
-							</div>
-						</div>
+				<nav class="fixed-nav-bar" >
+					<div align="right" style="margin-top: 0px;">
+						<ul>
+							<li><a href="home.php" class="a1" style="color: white;"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+							<li><a href="profile.php" class="b1" style="color: white;"><i class="fa fa-user"></i> My profile</a></li>
+							<li>
+								<div class="dropdown" style="margin-right: 60px; margin-left: -20px;">
+									<button class="dropbtn"><i class="fa fa-cog" aria-hidden="true" ></i>&nbsp;Settings</button>
+									<div class="dropdown-content">
+										<a href="profile_settings.php">Profile Settings</a>
+										<a href="account_settings.php">Account Settings</a>
+										<a href="logout.php">Logout</a>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<ul style="font-size: 30px;float: left;margin-top: -50px;">
+						<li style="color: white;">
+							favor.me
 						</li>
 					</ul>
-				</div>
-				<h1 style="font-size: 50px;">ELECTRONICS</h1>
+				</nav>
 			</header>
 			<hr id="header-line">
 			<div class="main">
 				<div>
 					<input type="text" height="200" width="500" placeholder="Ask a favor" name="askfavor">&nbsp&nbsp&nbsp&nbsp
 					<select type="text" name="categories">
-						<option value="electronics">Electronics</option>
+						<option value="academics">Academics</option>
 					</select>
 					<input type="submit" name="update" class="btn btn-danger" value="Ask">
 					<br>
@@ -93,7 +202,7 @@ if(isset($_POST['update']))
 				<ul class="cbp_tmtimeline">
 					<li>
 						<?php 
-						$query="SELECT * FROM electronics ORDER BY favor_id DESC";
+						$query="SELECT * FROM academics ORDER BY favor_id DESC";
 						$result=mysqli_query($connection,$query);
 						if($result)
 						{
@@ -106,33 +215,31 @@ if(isset($_POST['update']))
 								$date=$row['date'];
 								$time=$row['time'];
 								?>
-								<time class="cbp_tmtime"><span><?php echo "$date";?></span> <span><?php echo "$time";?></span></time>				
+								<time class="cbp_tmtime"><span><?php echo "$date";?></span> <span><?php echo "$time";?></span></time>				<div class="cbp_tmicon cbp_tmicon-phone"></div>
 								<div class="cbp_tmlabel">
-									<h2 class="wow"><?php echo "$favor";?><span id="by">posted by <em><a href="show_profile.php?user_id=<?php echo $user_id?>&amp;username=<?php echo $username?>&amp;favor=''"><?php echo $username?></a></em></span></h2>
+									<h2 class="wow"><?php echo "$favor";?><span id="by">posted by <em><a href="show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>"><?php echo $username?></a></em></span></h2>
 									<p>
 										<div class="baseline">
 											<?php 
-												$query_comments="SELECT * FROM electronics_comments WHERE favor_id=$favor_id ORDER BY comment_id ASC";
-												$result_comments=mysqli_query($connection,$query_comments);
-												if($result_comments)
+											$query_comments="SELECT * FROM academics_comments WHERE favor_id=$favor_id ORDER BY comment_id ASC";
+											$result_comments=mysqli_query($connection,$query_comments);
+											$check=mysqli_num_rows($result_comments);
+											if($result_comments)
+											{
+												while ($row_comments=mysqli_fetch_assoc($result_comments)) 
 												{
-													while ($row_comments=mysqli_fetch_assoc($result_comments)) 
-													{
-														$commenting_user_id=$row_comments['user_id'];
-														$commenting_username=find_username_by_id($commenting_user_id,$connection);
-														$comment=$row_comments['comment'];
-														echo "$comment";
+													$commenting_user_id=$row_comments['user_id'];
+													$commenting_username=find_username_by_id($commenting_user_id,$connection);
+													$comment=$row_comments['comment'];
+													echo "$comment";
 
-														echo "commented by";
-														echo "$commenting_username";
-														echo "<br>";
-													}
+													echo "commented by";
+													echo "$commenting_username";
+													echo "<br>";
 												}
+											}
 											?>
-											<input type="text" name="<?php echo $favor_id?>" id="<?php echo $favor_id;?>">
-											<input type="submit" name="comment" id="<?php echo $favor_id;?>" value="Comment" class="btn btn-danger" onClick="createField(<?php echo $favor_id?>);return true;">
-											<div id="hide"></div>
-											<br>
+											<a href="post.php?favor_id=<?php echo "$favor_id";?>">Comments(<?php echo "$check"; ?>)</a>
 										</div>
 									</p>
 								</div>
@@ -286,14 +393,14 @@ if(isset($_POST['comment']))
 	echo "$idButton";
 	$comments=mysql_entities_fix_string($_POST[$idButton]);
 	echo "$comments";
-	$query_insert_comment="INSERT INTO electronics_comments(user_id,favor_id,comment,date,time) VALUES($current_user_id,$idButton,'$comments','$date','$time')";
+	$query_insert_comment="INSERT INTO academics_comments(user_id,favor_id,comment,date,time) VALUES($current_user_id,$idButton,'$comments','$date','$time')";
 	$result_insert_comment=mysqli_query($connection,$query_insert_comment);
 	if($result_insert_comment)
 	{
 		echo "commented";
 		?>
 		<script type="text/javascript">
-			window.open ('timeline-electronics.php','_self',false);
+			window.open ('timeline-academics.php','_self',false);
 		</script>
 		<?php
 	}
@@ -301,7 +408,7 @@ if(isset($_POST['comment']))
 		echo "Comment failed";
 	?>
 	<script type="text/javascript">
-		window.open ('timeline-electronics.php','_self',false);
+		window.open ('timeline-academics.php','_self',false);
 	</script>
 	<?php
 }

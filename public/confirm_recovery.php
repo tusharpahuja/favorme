@@ -1,27 +1,27 @@
 <?php 
-include("../includes/database_connection.php");
-include("../includes/session.php");
-include("../includes/functions.php");
-?>
+        include("includes/db_connection.php");
+        include("includes/session.php");
+        include("includes/functions.php");
+ ?>
 <?php
-if(isset($_POST['submit']))
-{
-	$password=$_POST['password'];
-	$confirm_password=$_POST['confirm_password'];
-	if($password==$confirm_password)
+	if(isset($_POST['submit']))
 	{
-		$confirm_change_password=change_password($_SESSION['name'],$_SESSION['email'],$password);
-		if($confirm_change_password)
-			redirect_to("login.php");
+		$password=$_POST['password'];
+		$confirm_password=$_POST['confirm_password'];
+		if($password==$confirm_password)
+		{
+			$confirm_change_password=change_password($_SESSION['name'],$_SESSION['email'],$password);
+			if($confirm_change_password)
+				redirect_to("login.php");
+			else
+				die("Password could not be changed");
+		}
 		else
-			die("Password could not be changed");
+		{
+			destroy_Session();
+			echo "Passwords do not match";
+		}
 	}
-	else
-	{
-		destroy_Session();
-		echo "Passwords do not match";
-	}
-}
 
 
 ?>
@@ -32,9 +32,7 @@ if(isset($_POST['submit']))
 	<meta charset="UTF-8" /> 
 	<title>Forgot Password</title>
 </head>
-<link rel="stylesheet" type="text/css" href="css/one.css" />
-<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
-<link rel="stylesheet" type="text/css" href="css1/style.css" />
+
 <body>
 	<div id="forgot-password">
 		<div class="forgot-password">

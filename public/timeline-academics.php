@@ -223,6 +223,7 @@ if(isset($_POST['update']))
 											<?php 
 											$query_comments="SELECT * FROM academics_comments WHERE favor_id=$favor_id ORDER BY comment_id ASC";
 											$result_comments=mysqli_query($connection,$query_comments);
+											$check=mysqli_num_rows($result_comments);
 											if($result_comments)
 											{
 												while ($row_comments=mysqli_fetch_assoc($result_comments)) 
@@ -239,7 +240,7 @@ if(isset($_POST['update']))
 											}
 											?>
 											<input type="text" name="<?php echo $favor_id?>" id="<?php echo $favor_id;?>">
-											<input type="submit" name="comment" id="<?php echo $favor_id;?>" value="Comment" class="btn btn-danger" onClick="createField(<?php echo $favor_id?>);return true;">
+											<a href="post.php?favor_id=<?php echo "$favor_id";?>">Comments(<?php echo "$check"; ?>)</a>
 											<div id="hide"></div>
 											<br>
 										</div>
