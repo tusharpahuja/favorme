@@ -39,7 +39,7 @@ if(isset($_POST['update']))
 <html lang="en" class="no-js favorsection">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>Profile</title>
+	<title>Foods</title>
 	<meta name="theme-color" content="#46a4da">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/settings.css" />
@@ -106,12 +106,13 @@ if(isset($_POST['update']))
 						</li>
 					</ul>
 				</nav>
+				<h1 style="font-size: 50px;margin-top: 70px;margin-bottom: -80px;">FOODS</h1> 
 			</header>
 			<hr id="header-line">
 			<div class="main">
 				<div>
 					&nbsp&nbsp&nbsp&nbsp
-					<select type="text" name="categories" style="float: right;">
+					<select type="text" name="categories" style="float: right;display: none;">
 						<option value="food">Food & Snacks</option>
 					</select>
 					<br>
@@ -148,16 +149,19 @@ if(isset($_POST['update']))
 													$commenting_user_id=$row_comments['user_id'];
 													$commenting_username=find_username_by_id($commenting_user_id,$connection);
 													$comment=$row_comments['comment'];
+													echo "<div style=\"float:left;\">";
 													echo "$comment";
 													echo "&nbsp;&nbsp;&nbsp;&nbsp;";
-
+													echo "<i>";
 													echo "commented by &nbsp;";
+													echo "</i>";
 													echo "<a href=\"show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>\"";
 													echo ">";
 													echo "<i>";
 													echo $username;
 													echo "</i>";
 													echo "</a>";
+													echo "</div>";
 													echo "<br>";
 												}
 											}

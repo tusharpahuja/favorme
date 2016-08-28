@@ -39,7 +39,7 @@ if(isset($_POST['update']))
 <html lang="en" class="no-js favorsection">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>Profile</title>
+	<title>GAMES</title>
 	<meta name="theme-color" content="#46a4da">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/settings.css" />
@@ -105,14 +105,14 @@ if(isset($_POST['update']))
 							<input type="submit" name="update" value="Ask" class="btn btn-danger doing" style="border:2px solid white;">
 						</li>
 					</ul>
-					<!--<h1 style="font-size: 50px;margin-top: -40px;">GAMES</h1> -->
 				</nav>
+				<h1 style="font-size: 50px;margin-top: 70px;margin-bottom: -80px;">GAMES</h1> 
 			</header>
 			<hr id="header-line">
 			<div class="main">
 				<div>
 					&nbsp&nbsp&nbsp&nbsp
-					<select type="text" name="categories" style="float: right;">
+					<select type="text" name="categories" style="float: right;display: none;">
 						<option value="games">Games</option>
 					</select>
 					<br>
@@ -149,16 +149,19 @@ if(isset($_POST['update']))
 													$commenting_user_id=$row_comments['user_id'];
 													$commenting_username=find_username_by_id($commenting_user_id,$connection);
 													$comment=$row_comments['comment'];
+													echo "<div style=\"float:left;\">";
 													echo "$comment";
 													echo "&nbsp;&nbsp;&nbsp;&nbsp;";
-
+													echo "<i>";
 													echo "commented by &nbsp;";
+													echo "</i>";
 													echo "<a href=\"show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>\"";
 													echo ">";
 													echo "<i>";
 													echo $username;
 													echo "</i>";
 													echo "</a>";
+													echo "</div>";
 													echo "<br>";
 												}
 											}
@@ -294,6 +297,18 @@ if(isset($_POST['update']))
 					}
 				} );
 			})();
+			function stickyNav() {
+
+				if (window.pageYOffset > 20) {
+					var x = document.getElementById('yourID');
+					x.className = "navbar navbar-default navbar-fixed-top";
+				} 
+				else if (window.pageYOffset <= 20) {
+					var x = document.getElementById('navigate');
+					x.className = "navbar navbar-default";
+				}
+			}
+			window.onload = stickyNav;
 		</script>
 		<script type="text/javascript">
 			$("#categories").click(function(){
@@ -305,8 +320,6 @@ if(isset($_POST['update']))
 				$("#categories").addClass('noshow');
 			});
 		</script>
-		
-		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</form>
 </body>
 </html>

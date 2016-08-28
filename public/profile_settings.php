@@ -108,7 +108,7 @@ if(isset($_POST['pupload']))
 <html lang="en" class="no-js favorsection">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>Profile</title>
+	<title>Profile Settings</title>
 	<meta name="theme-color" content="#46a4da">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/settings.css" />
@@ -190,13 +190,7 @@ if(isset($_POST['pupload']))
 						<p class="sign up button" align="center"> 
 							<input type="submit" name="save_changes" value="Save Changes" style="height: 1em; width: 5em;font-size: 17px;">
 						</p>
-						<?php 
-						$result=mysqli_query($connection,$pull);
-						$pics=mysqli_fetch_assoc($result);
-						echo '<div class="imgLow" align="center">';
-						echo "<img src='upload/$pics[url]' alt='profile picture' width='80' height='64'   class='doubleborder'/></div>";
-						?>
-						<p >
+						<p>
 							<input type="file" name="file"  />
 						</p>
 						<p class="sign up button" align="center"> 

@@ -52,7 +52,7 @@
 }
 
 .cbp_tmtimeline > li:nth-child(odd) .cbp_tmtime span:last-child {
-	color: #6cbfee;
+	color: #3594cb;
 }
 
 /* Right content */
@@ -68,8 +68,8 @@
 	border-radius: 5px;
 }
 
-.cbp_tmtimeline > li:nth-child(odd) .cbp_tmlabel {
-	background: #6cbfee;
+.cbp_tmtimeline > li:nth-child(even) .cbp_tmlabel {
+	background: #fff;
 }
 
 .cbp_tmtimeline > li .cbp_tmlabel h2 { 

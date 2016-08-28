@@ -40,6 +40,7 @@ if(isset($_POST['submit']))
 <!doctype html>
 <html>
 <head>
+	<title>Delete account</title>
 	<link rel="stylesheet" type="text/css" href="css/one.css" />
 	<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
 	<link rel="stylesheet" type="text/css" href="css1/style.css" />
