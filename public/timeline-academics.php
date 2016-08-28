@@ -1,44 +1,45 @@
 <?php
-include("../includes/functions.php");
-include("../includes/session.php");
-include("../includes/database_connection.php");
+	include("../includes/functions.php");
+	include("../includes/session.php");
+	include("../includes/database_connection.php");
 ?>
 
 <?php
-if(logged_in())
-{
-	$current_user_id=$_SESSION['current_user_id'];
-	$current_username=$_SESSION['current_username'];
-	$current_name=$_SESSION['current_name'];
-}
-else
-	redirect_to("LOGIN.php");
+	if(logged_in())
+	{
+		$current_user_id=$_SESSION['current_user_id'];
+		$current_username=$_SESSION['current_username'];
+		$current_name=$_SESSION['current_name'];
+	}
+	else
+		redirect_to("LOGIN.php");
 ?>
 <?php
-if(isset($_POST['update']))
-{
-	$ask_favor=mysql_entities_fix_string($_POST['askfavor']);
-	$category=mysql_entities_fix_string($_POST['categories']);
-	$time=date("h:i");
-	$date=date("Y-m-d");
-	if(!empty($category) && !empty($ask_favor))
+	if(isset($_POST['update']))
 	{
-		if($category=="academics")
-		{	
-			$query="INSERT INTO academics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
-			$result=mysqli_query($connection,$query);
-			if($result)
-				header("location: timeline-academics.php");
-			else
-				echo "Favor Updation failed!";
+		$ask_favor=mysql_entities_fix_string($_POST['askfavor']);
+		$category=mysql_entities_fix_string($_POST['categories']);
+		$time=date("h:i");
+		$date=date("Y-m-d");
+		if(!empty($category) && !empty($ask_favor))
+		{
+			if($category=="academics")
+			{	
+				$query="INSERT INTO academics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
+				$result=mysqli_query($connection,$query);
+				if($result)
+					header("location: timeline-academics.php");
+				else
+					echo "Favor Updation failed!";
+			}
 		}
 	}
-}
 ?>
 <?php
 	$time=date("h:i");
 	$date=date("Y-m-d");
 ?>
+
 <!DOCTYPE html>
 <html lang="en" class="no-js favorsection">
 	<head>
@@ -137,35 +138,35 @@ if(isset($_POST['update']))
 									$date=$row['date'];
 									$time=$row['time'];
 									?>
-									<time class="cbp_tmtime"><span><?php echo "$date";?></span> <span><?php echo "$time";?></span></time>				<div class="cbp_tmicon cbp_tmicon-phone"></div>
+									<time class="cbp_tmtime"><span><?php echo "$date";?></span> <span><?php echo "$time";?></span></time><div class="cbp_tmicon cbp_tmicon-phone"></div>
 									<div class="cbp_tmlabel">
 										<h2 class="wow"><?php echo "$favor";?><span id="by">posted by <em><a href="show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>"><?php echo $username?></a></em></span></h2>
 										<p>
 											<div class="baseline">
 												<?php 
-												$query_comments="SELECT * FROM academics_comments WHERE favor_id=$favor_id ORDER BY comment_id ASC";
-												$result_comments=mysqli_query($connection,$query_comments);
-												$check=mysqli_num_rows($result_comments);
-												if($result_comments)
-												{
-													while ($row_comments=mysqli_fetch_assoc($result_comments)) 
+													$query_comments="SELECT * FROM academics_comments WHERE favor_id=$favor_id ORDER BY comment_id ASC";
+													$result_comments=mysqli_query($connection,$query_comments);
+													$check=mysqli_num_rows($result_comments);
+													if($result_comments)
 													{
-														$commenting_user_id=$row_comments['user_id'];
-														$commenting_username=find_username_by_id($commenting_user_id,$connection);
-														$comment=$row_comments['comment'];
-														echo "$comment";
-														echo "&nbsp;&nbsp;&nbsp;&nbsp;";
+														while ($row_comments=mysqli_fetch_assoc($result_comments)) 
+														{
+															$commenting_user_id=$row_comments['user_id'];
+															$commenting_username=find_username_by_id($commenting_user_id,$connection);
+															$comment=$row_comments['comment'];
+															echo "$comment";
+															echo "&nbsp;&nbsp;&nbsp;&nbsp;";
 
-														echo "commented by &nbsp;";
-														echo "<a href=\"show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>\"";
-														echo ">";
-														echo "<i>";
-														echo $username;
-														echo "</i>";
-														echo "</a>";
-														echo "<br>";
+															echo "commented by &nbsp;";
+															echo "<a href=\"show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>\"";
+															echo ">";
+															echo "<i>";
+															echo $username;
+															echo "</i>";
+															echo "</a>";
+															echo "<br>";
+														}
 													}
-												}
 												?>
 												<a href="post.php?favor_id=<?php echo $favor_id;?>&category=academics">Comments(<?php echo "$check"; ?>)</a>
 												<br>
