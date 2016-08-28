@@ -346,21 +346,3 @@ if(isset($_POST['update']))
 	</form>
 </body>
 </html>
-
-<?php
-
-$query="SELECT * FROM electronics WHERE user_id=$current_user_id";
-$result=mysqli_query($connection,$query);
-if($result)
-{
-	while($row=mysqli_fetch_assoc($result))
-	{
-		$user_id=$row['user_id'];
-		$favor=$row['favor'];
-		echo "$favor";
-		echo "&nbsp&nbsp&nbsp&nbsp posted by &nbsp&nbsp&nbsp&nbsp";
-		echo "$current_username";
-		echo "<br>";
-	}
-}
-?>
