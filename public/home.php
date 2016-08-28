@@ -165,7 +165,7 @@ if(isset($_POST['update']))
 		}
 	</style>
 </head>         
-<body>
+<body background-color="white">
 	<form action="home.php" method="POST">
 		<div id="container" class="container" >
 			<header>
@@ -405,7 +405,6 @@ if(isset($_POST['update']))
 				$("#categories").addClass('noshow');
 			});
 		</script>
-		
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</form>
 </body>

@@ -39,7 +39,7 @@ if(isset($_POST['update']))
 <html lang="en" class="no-js favorsection">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>Profile</title>
+	<title>Academics</title>
 	<meta name="theme-color" content="#46a4da">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/settings.css" />
@@ -98,20 +98,21 @@ if(isset($_POST['update']))
 						<li style="color: white;">
 							favor.me
 						</li>
-						<li style="margin-top: -20px;">
-							<input type="text" height="200" width="500" placeholder="Ask a favor" name="askfavor" class="button">
+						<li style="margin-top: -20px;margin-left: 40px;">
+							<input type="text" height="200" width="300" placeholder="Ask a favor" name="askfavor" class="button">
 						</li>
 						<li style="margin-left: -30px;">
 							<input type="submit" name="update" value="Ask" class="btn btn-danger doing" style="border:2px solid white;">
 						</li>
 					</ul>
 				</nav>
+				<h1 style="font-size: 50px;margin-top: 70px;margin-bottom: -80px;">ACADEMICS</h1> 
 			</header>
 			<hr id="header-line">
 			<div class="main">
 				<div>
 					&nbsp&nbsp&nbsp&nbsp
-					<select type="text" name="categories" style="float: right;">
+					<select type="text" name="categories" style="float: right;display: none;">
 						<option value="academics">Academics</option>
 					</select>
 					<br>
@@ -135,7 +136,7 @@ if(isset($_POST['update']))
 								?>
 								<time class="cbp_tmtime"><span><?php echo "$date";?></span> <span><?php echo "$time";?></span></time>				<div class="cbp_tmicon cbp_tmicon-phone"></div>
 								<div class="cbp_tmlabel">
-									<h2 class="wow"><?php echo "$favor";?><span id="by">posted by <em><a href="show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>"><?php echo $username?></a></em></span></h2>
+									<h2 class="wow" style="text-align: left;"><?php echo "$favor";?><span id="by">posted by <em><a href="show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>"><?php echo $username?></a></em></span></h2>
 									<p>
 										<div class="baseline">
 											<?php 
@@ -148,16 +149,19 @@ if(isset($_POST['update']))
 													$commenting_user_id=$row_comments['user_id'];
 													$commenting_username=find_username_by_id($commenting_user_id,$connection);
 													$comment=$row_comments['comment'];
+													echo "<div style=\"float:left;\">";
 													echo "$comment";
 													echo "&nbsp;&nbsp;&nbsp;&nbsp;";
-
+													echo "<i>";
 													echo "commented by &nbsp;";
+													echo "</i>";
 													echo "<a href=\"show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>\"";
 													echo ">";
 													echo "<i>";
 													echo $username;
 													echo "</i>";
 													echo "</a>";
+													echo "</div>";
 													echo "<br>";
 												}
 											}

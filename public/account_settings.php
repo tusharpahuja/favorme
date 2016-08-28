@@ -18,7 +18,7 @@
 <html lang="en" class="no-js favorsection">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>Account</title>
+	<title>Account Settings</title>
 	<meta name="theme-color" content="#46a4da">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/settings.css" />
