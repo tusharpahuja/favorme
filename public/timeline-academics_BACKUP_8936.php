@@ -94,6 +94,7 @@ if(isset($_POST['update']))
 										<a href="profile_settings.php">Profile Settings</a>
 										<a href="account_settings.php">Account Settings</a>
 										<a href="logout.php">Logout</a>
+=======
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1"> 
 		<title>Profile</title>
@@ -147,6 +148,7 @@ if(isset($_POST['update']))
 											<a href="account_settings.php">Account Settings</a>
 											<a href="logout.php">Logout</a>
 										</div>
+>>>>>>> 56ba96705673abdaaf2aaa7ac6f6bb0d61fc1058
 									</div>
 								</li>
 							</ul>
@@ -174,6 +176,7 @@ if(isset($_POST['update']))
 						<br>
 						<br>
 					</div>
+<<<<<<< HEAD
 					<ul style="font-size: 30px;float: left;margin-top: -50px;">
 						<li style="color: white;">
 							favor.me
@@ -243,6 +246,7 @@ if(isset($_POST['update']))
 													echo "</a>";
 													echo "</div>";
 													echo "<br>";
+=======
 					<ul class="cbp_tmtimeline">
 						<li>
 							<?php 
@@ -287,6 +291,7 @@ if(isset($_POST['update']))
 														echo "</a>";
 														echo "<br>";
 													}
+>>>>>>> 56ba96705673abdaaf2aaa7ac6f6bb0d61fc1058
 												}
 												?>
 												<a href="post.php?favor_id=<?php echo $favor_id;?>&category=academics">Comments(<?php echo "$check"; ?>)</a>
