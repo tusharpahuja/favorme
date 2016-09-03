@@ -158,7 +158,7 @@ if(isset($_POST['update']))
 													echo "<a href=\"show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>\"";
 													echo ">";
 													echo "<i>";
-													echo $username;
+													echo $commenting_username;
 													echo "</i>";
 													echo "</a>";
 													echo "</div>";
