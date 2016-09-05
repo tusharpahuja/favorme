@@ -51,7 +51,7 @@ if (isset($_POST['submit']))
 
                 <div class="header-left-bottom agileinfo">
 
-                 <form action="LOGIN.php" method="post" autocomplete="on">
+                 <form action="login.php" method="post" autocomplete="on">
                     <input type="text"   value="User name" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"  required />
                     <input type="password"  value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"  required />
                     <span style="color: red;"><?php echo $error?></span>
