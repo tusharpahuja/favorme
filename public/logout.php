@@ -2,6 +2,6 @@
 	include("../includes/functions.php");
 	session_start();
 	destroySession();
-	redirect_to("login.php");
+	redirect_to("LOGIN.php");
 	
 	?>
