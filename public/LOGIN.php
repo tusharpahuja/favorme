@@ -35,62 +35,45 @@ if (isset($_POST['submit']))
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-    <title>FAVOR.ME</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <meta name="description" content="Login and Registration" />
-    <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
-    <meta name="author" content="Codrops" />
-    <link rel="shortcut icon" href="../favicon.ico"> 
-    <link rel="stylesheet" type="text/css" href="css1/demo1.css" />
-    <link rel="stylesheet" type="text/css" href="css1/style.css" />
+    <script src="js/jquery.min.js"></script>
+    <link href="css/login.css" rel="stylesheet" type="text/css" media="all"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Welcome to <span>FAVOR.ME !</span></h1>
-            <div class="info">
-                <p>  
-                    <a href="about_us.html" class="About_us">About us</a>
-                </p>
-            </div>
-        </header>
-        <section>               
-            <div id="container_demo" >
-                <a class="hiddenanchor" id="toregister"></a>
-                <a class="hiddenanchor" id="tologin"></a>
-                <div id="wrapper">
-                    <div id="login" class="animate form">
-                    <form  action="LOGIN.php" method='POST' autocomplete="on"> 
-                            <h1>Log in</h1> 
-                            <p> 
-                                <label for="username" class="uname" data-icon="u" > Your username </label>
-                                <input id="username" name="username" required="required" type="text" placeholder="myusername"/>
-                            </p>
-                            <p> 
-                                <label for="password" class="youpasswd" data-icon="p"> Your password </label>
-                                <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO" /> 
-                            </p>
-                            <span style="color: red;"><?php echo $error?></span>
-                            <p id="forgot" >
-                                <a href="forgot_password.php" style="font-weight: bold; text-decoration: none; 
-                                color: #4169E1;">Forgot Password ?</a>
-                            </p>
-                            <p class="login button"> 
-                                <input type="submit" name="submit" value="Login" /> 
-                            </p>
-                            <p class="change_link">
-                                Not a member yet ?
-                                <a href="signup.php" class="to_register">Join us</a>
-                            </p>
-                        </form>
-                    </div>
+    <div class="header">
+        <div class="header-main">
+           <h1>Welcome to FAVOR.ME !</h1>
+           <div class="header-bottom">
+            <div class="header-right w3agile">
 
+                <div class="header-left-bottom agileinfo">
+
+                 <form action="LOGIN.php" method="post" autocomplete="on">
+                    <input type="text"   value="User name" name="username" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User name';}"  required />
+                    <input type="password"  value="Password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'password';}"  required />
+                    <span style="color: red;"><?php echo $error?></span>
+                    <div class="forgot">
+                        <h6><a href="forgot_password.php">Forgot Password?</a></h6>
+                    </div>
+                    <div class="clear"> </div>
+                    <input type="submit" name="submit" value="Login">
+                </form> 
+                <div class="header-left-top">
+                <div class="sign-up"> <h2>or</h2> </div>
                 </div>
-            </div>  
-        </section>
+                <div class="header-social wthree">
+                    <a href="signup.php" class="face" style="text-align: center;"><h5>Sign up</h5></a>
+                    <a href="about_us.html" class="twitt" style="text-align: center;"><h5>About Us</h5></a>
+                </div>
+            </div>
+        </div>
+
     </div>
+</div>
+</div>
 </body>
 </html>
 
