@@ -9,7 +9,7 @@
 	$username1=mysqli_real_escape_string($connection,$username);
 	if(!logged_in())
 		{
-			redirect_to("LOGIN.php");
+			redirect_to("login.php");
 		}
 ?>
 

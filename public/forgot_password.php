@@ -34,7 +34,7 @@ if(isset($_POST['submit']))
 ?>
 <?php
 	if(isset($_POST["login"])){
-		redirect_to("LOGIN.php");
+		redirect_to("login.php");
 	}	
 
 ?>

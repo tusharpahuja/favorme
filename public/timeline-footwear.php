@@ -12,7 +12,7 @@ if(logged_in())
 	$current_name=$_SESSION['current_name'];
 }
 else
-	redirect_to("LOGIN.php");
+	redirect_to("login.php");
 ?>
 <?php
 if(isset($_POST['update']))
