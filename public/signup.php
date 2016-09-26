@@ -91,6 +91,7 @@ if (isset($_POST['submit']))
                     <input type="password" name="password" placeholder="password" required />
                     <span style="color: red;"><?php echo "$error_in_password"?></span>
                     <input type="password" name="confirm_password" placeholder="confirm_password"  required />
+                    <br/>
                     <span style="color: red;"><?php echo "$error_in_password"?></span>
                     <input type="submit" name="submit" value="Sign Up">
                 </form> 
@@ -98,7 +99,7 @@ if (isset($_POST['submit']))
                 <div class="sign-up"> <h2>or</h2> </div>
                 </div>
                 <div class="header-social wthree">
-                    <a href="LOGIN.php" class="face" style="text-align: center;"><h5>LOGIN</h5></a>
+                    <a href="login.php" class="face" style="text-align: center;"><h5>LOGIN</h5></a>
                     <a href="about_us.html" class="twitt" style="text-align: center;"><h5>About Us</h5></a>
                 </div>
             </div>

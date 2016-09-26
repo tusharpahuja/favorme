@@ -39,7 +39,7 @@ if(isset($_POST['update']))
 <html lang="en" class="no-js favorsection">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>academics</title>
+	<title>Profile</title>
 	<meta name="theme-color" content="#46a4da">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/settings.css" />
@@ -89,62 +89,6 @@ if(isset($_POST['update']))
 										<a href="profile_settings.php">Profile Settings</a>
 										<a href="account_settings.php">Account Settings</a>
 										<a href="logout.php">Logout</a>
-<<<<<<< HEAD
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<title>Profile</title>
-		<meta name="theme-color" content="#46a4da">
-		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
-		<link rel="stylesheet" type="text/css" href="css/settings.css" />
-		<link rel="stylesheet" type="text/css" href="css/component.css" />
-		<link rel="stylesheet" type="text/css" href="css/content.css" />
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link rel="stylesheet" type="text/css" href="css/profile.css">
-		<link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<script src="js/modernizr.custom.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/timeline.css" />
-		<link rel="stylesheet" type="text/css" href="css/one.css" />
-		<link rel="stylesheet" type="text/css" href="css/new.css" />
-		<link rel="stylesheet" type="text/css" href="css/button.css" />
-		<link rel="stylesheet" type="text/css" href="css1/demo1.css" />
-		<link rel="stylesheet" type="text/css" href="css1/style.css" />
-		<style type="text/css">
-			.fixed-nav-bar {
-				position: fixed;
-				top: 0;
-				left: 0;
-				z-index: 9999;
-				width: 100%;
-				height: 55px;
-				background-color: #e85657;
-			}
-			.doing:hover{
-				background-color: white;
-				color: #d9534f;
-			}
-		</style>
-	</head>
-	<body>
-		<form action="timeline-academics.php" method="POST">
-			<div id="container" class="container">
-				<header>
-					<nav class="fixed-nav-bar" >
-						<div align="right" style="margin-top: 0px;">
-							<ul>
-								<li><a href="home.php" class="a1" style="color: white;"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
-								<li><a href="profile.php" class="b1" style="color: white;"><i class="fa fa-user"></i> My profile</a></li>
-								<li>
-									<div class="dropdown" style="margin-right: 60px; margin-left: -20px;">
-										<button class="dropbtn"><i class="fa fa-cog" aria-hidden="true" ></i>&nbsp;Settings</button>
-										<div class="dropdown-content">
-											<a href="profile_settings.php">Profile Settings</a>
-											<a href="account_settings.php">Account Settings</a>
-											<a href="logout.php">Logout</a>
-										</div>
-=======
->>>>>>> fe7b71e84f93e69de163e1887bb0d6cfcfce8d60
 									</div>
 								</div>
 							</li>
@@ -162,14 +106,13 @@ if(isset($_POST['update']))
 						</li>
 					</ul>
 				</nav>
-				<h1 style="font-size: 50px;margin-top: 70px;margin-bottom: -80px;">academics</h1> 
 			</header>
 			<hr id="header-line">
 			<div class="main">
 				<div>
 					&nbsp&nbsp&nbsp&nbsp
-					<select type="text" name="categories" style="float: right;display: none;">
-						<option value="academics">academics</option>
+					<select type="text" name="categories" style="float: right;">
+						<option value="academics">Academics</option>
 					</select>
 					<br>
 					<br>
@@ -205,67 +148,17 @@ if(isset($_POST['update']))
 													$commenting_user_id=$row_comments['user_id'];
 													$commenting_username=find_username_by_id($commenting_user_id,$connection);
 													$comment=$row_comments['comment'];
-													echo "<div style=\"float:left;\">";
 													echo "$comment";
 													echo "&nbsp;&nbsp;&nbsp;&nbsp;";
-													echo "<i>";
+
 													echo "commented by &nbsp;";
-													echo "</i>";
 													echo "<a href=\"show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>\"";
 													echo ">";
 													echo "<i>";
 													echo $username;
 													echo "</i>";
 													echo "</a>";
-													echo "</div>";
 													echo "<br>";
-<<<<<<< HEAD
-					<ul class="cbp_tmtimeline">
-						<li>
-							<?php 
-							$query="SELECT * FROM academics ORDER BY favor_id DESC";
-							$result=mysqli_query($connection,$query);
-							if($result)
-							{
-								while($row=mysqli_fetch_assoc($result))
-								{
-									$favor_id=$row['favor_id'];
-									$user_id=$row['user_id'];
-									$username=find_username_by_id($user_id,$connection);
-									$favor=$row['favor'];
-									$date=$row['date'];
-									$time=$row['time'];
-									?>
-									<time class="cbp_tmtime"><span><?php echo "$date";?></span> <span><?php echo "$time";?></span></time>				<div class="cbp_tmicon cbp_tmicon-phone"></div>
-									<div class="cbp_tmlabel">
-										<h2 class="wow"><?php echo "$favor";?><span id="by">posted by <em><a href="show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>"><?php echo $username?></a></em></span></h2>
-										<p>
-											<div class="baseline">
-												<?php 
-												$query_comments="SELECT * FROM academics_comments WHERE favor_id=$favor_id ORDER BY comment_id ASC";
-												$result_comments=mysqli_query($connection,$query_comments);
-												$check=mysqli_num_rows($result_comments);
-												if($result_comments)
-												{
-													while ($row_comments=mysqli_fetch_assoc($result_comments)) 
-													{
-														$commenting_user_id=$row_comments['user_id'];
-														$commenting_username=find_username_by_id($commenting_user_id,$connection);
-														$comment=$row_comments['comment'];
-														echo "$comment";
-														echo "&nbsp;&nbsp;&nbsp;&nbsp;";
-
-														echo "commented by &nbsp;";
-														echo "<a href=\"show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>\"";
-														echo ">";
-														echo "<i>";
-														echo $username;
-														echo "</i>";
-														echo "</a>";
-														echo "<br>";
-													}
-=======
->>>>>>> fe7b71e84f93e69de163e1887bb0d6cfcfce8d60
 												}
 											}
 											?>
@@ -299,7 +192,7 @@ if(isset($_POST['update']))
 									<a href="timeline-academics.php"><li>Academics</li></a>
 								</div>
 								<div class="sidebar-li">
-									<a href="timeline-academics.php"><li>academics</li></a>
+									<a href="timeline-books.php"><li>Books</li></a>
 								</div>
 								<div class="sidebar-li">
 									<a href="timeline-cosmetics.php"><li>Personal care</li></a>

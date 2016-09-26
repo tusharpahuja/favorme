@@ -28,7 +28,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO electronics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-books.php");
+				header("location: timeline-electronics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -38,7 +38,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO movies(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-books.php");
+				header("location: timeline-movies.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -48,7 +48,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO games(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-books.php");
+				header("location: timeline-games.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -68,7 +68,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO sports(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-books.php");
+				header("location: timeline-sports.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -78,7 +78,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO cosmetics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-books.php");
+				header("location: timeline-cosmetics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -88,7 +88,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO footwear(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-books.php");
+				header("location: timeline-footwear.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -98,7 +98,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO food(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-books.php");
+				header("location: timeline-food.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -108,7 +108,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO academics(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-books.php");
+				header("location: timeline-academics.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -118,7 +118,7 @@ if(isset($_POST['update']))
 			$query="INSERT INTO otheraccessories(user_id,favor,time,date) VALUES($current_user_id,'$ask_favor','$time','$date')";
 			$result=mysqli_query($connection,$query);
 			if($result)
-				header("location: timeline-books.php");
+				header("location: timeline-otheraccessories.php");
 			else
 				echo "Favor Updation failed!";
 		}
@@ -201,7 +201,7 @@ if(isset($_POST['update']))
 			</header>
 			<hr id="header-line">
 			<div class="main">
-				<div>
+				<div style="display:none;">
 					&nbsp&nbsp&nbsp&nbsp
 					<select type="text" name="categories" style="float: right;">
 						<option value="electronics">Electronics</option>

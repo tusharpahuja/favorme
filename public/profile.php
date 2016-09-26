@@ -15,8 +15,10 @@ else
 $pull="SELECT * FROM user_details WHERE user_id = $current_user_id";
 $result=mysqli_query($connection,$pull);
 $pics=mysqli_fetch_assoc($result);
-echo '<div class="imgLow">';
-echo "<img src='upload/$pics[url]' alt='profile picture' width='80' height='64'   class='doubleborder'/></div>";
+echo '<div class="imgLow" style="margin-top:100px;">';
+echo "<img src='upload/$pics[url]' alt='profile picture' width='180' height='164'   class='doubleborder'/></div>";
+echo '</div>';
+
 ?>
 
 <?php

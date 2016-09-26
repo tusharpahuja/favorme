@@ -39,7 +39,7 @@ if(isset($_POST['update']))
 <html lang="en" class="no-js favorsection">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<title>Electronics</title>
+	<title>electronics</title>
 	<meta name="theme-color" content="#46a4da">
 	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="css/settings.css" />
@@ -105,15 +105,15 @@ if(isset($_POST['update']))
 							<input type="submit" name="update" value="Ask" class="btn btn-danger doing" style="border:2px solid white;">
 						</li>
 					</ul>
-					<h1 style="font-size: 50px;margin-top: 70px;margin-bottom: -80px;">ELECTRONICS</h1> 
 				</nav>
+				<h1 style="font-size: 50px;margin-top: 70px;margin-bottom: -80px;">electronics</h1> 
 			</header>
 			<hr id="header-line">
 			<div class="main">
 				<div>
 					&nbsp&nbsp&nbsp&nbsp
 					<select type="text" name="categories" style="float: right;display: none;">
-						<option value="electronics">Electronics</option>
+						<option value="electronics">electronics</option>
 					</select>
 					<br>
 					<br>
@@ -136,11 +136,11 @@ if(isset($_POST['update']))
 								?>
 								<time class="cbp_tmtime"><span><?php echo "$date";?></span> <span><?php echo "$time";?></span></time>				<div class="cbp_tmicon cbp_tmicon-phone"></div>
 								<div class="cbp_tmlabel">
-									<h2 class="wow"><?php echo "$favor";?><span id="by">posted by <em><a href="show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>&favor=''"><?php echo $username?></a></em></span></h2>
+									<h2 class="wow"><?php echo "$favor";?><span id="by">posted by <em><a href="show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>"><?php echo $username?></a></em></span></h2>
 									<p>
 										<div class="baseline">
 											<?php 
-											$query_comments="SELECT * FROM electronics_comments WHERE favor_id=$favor_id ORDER BY comment_id ASC";
+											$query_comments="SELECT * FROM books_comments WHERE favor_id=$favor_id ORDER BY comment_id ASC";
 											$result_comments=mysqli_query($connection,$query_comments);
 											if($result_comments)
 											{
@@ -158,7 +158,7 @@ if(isset($_POST['update']))
 													echo "<a href=\"show_profile.php?user_id=<?php echo $user_id?>&username=<?php echo $username?>\"";
 													echo ">";
 													echo "<i>";
-													echo $username;
+													echo $commenting_username;
 													echo "</i>";
 													echo "</a>";
 													echo "</div>";
@@ -323,7 +323,7 @@ if(isset($_POST['comment']))
 	echo "$idButton";
 	$comments=mysql_entities_fix_string($_POST[$idButton]);
 	echo "$comments";
-	$query_insert_comment="INSERT INTO electronics_comments(user_id,favor_id,comment,date,time) VALUES($current_user_id,$idButton,'$comments','$date','$time')";
+	$query_insert_comment="INSERT INTO books_comments(user_id,favor_id,comment,date,time) VALUES($current_user_id,$idButton,'$comments','$date','$time')";
 	$result_insert_comment=mysqli_query($connection,$query_insert_comment);
 	if($result_insert_comment)
 	{
